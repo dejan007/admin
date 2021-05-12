@@ -1,0 +1,38 @@
+.container {
+    width: 200px;
+    height: 100vh;
+    left: 0;
+    top:0;
+    background-color: rgb(58, 56, 56);
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: white;
+      padding-left: 25px;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      &:hover {
+        text-decoration: none;
+        background-color: rgb(41, 197, 218);
+      }
+    }
+    
+  }
+
+  .content {
+    position: absolute;
+    left: 220px;
+    width: 200px;
+    height: 100px;
+    top: 100px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .backToHome {
+    margin: 3rem 0 0;
+  }

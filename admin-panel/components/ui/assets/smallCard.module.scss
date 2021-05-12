@@ -1,0 +1,30 @@
+.container {
+    width: 310px;
+    height: 180px;
+    background-color: rgb(243, 242, 240);
+    border: solid thin rgb(184, 181, 181);
+    border-radius: 10px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .value {
+        text-align: center;
+        font-size: 2.6em;
+        padding-top: 15px;
+
+        svg {
+            height: 35px;
+            transform: scaleY(1.2);
+            fill: green;
+        }
+    }
+
+    .title {
+        color: rgb(68, 66, 66);
+        text-align: center;
+        font-size: 1.3em;
+        padding-top: 20px;
+    }
+}
