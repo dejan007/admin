@@ -5,14 +5,14 @@ import Layout from '../../components/ui/Layout/layout'
 import SmallCard from '../../components/ui/assets/SmallCard'
 
 
-export default function FirstPost() {
+export default function Index() {
   return (
     <Layout>
       
      <Head>
-        <title>First Post</title>
+        <title>Posts</title>
       </Head>
-      <h1>First Post</h1>
+      <h1>Posts</h1>
     </Layout>
   )
 }
