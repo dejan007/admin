@@ -1,18 +1,40 @@
-import React from 'react';
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head'
 import Layout from '../../components/ui/Layout/layout'
-import SmallCard from '../../components/ui/assets/SmallCard'
-
+import axios from 'axios';
+import OnePost from '../../components/ui/assets/onePost/OnePost';
+import styles from './posts.module.scss';
 
 export default function Index() {
+  const [posts, setPosts] = useState();
+
+  useEffect(() => {
+    fetchPosts();
+  }, [])
+
+  async function fetchPosts() {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/');
+    setPosts(response.data)
+  }
+
+  console.log(posts);
+
   return (
     <Layout>
-      
-     <Head>
+      <Head>
         <title>Posts</title>
       </Head>
       <h1>Posts</h1>
-    </Layout>
+      {posts &&
+        <>
+          <div className={styles.postsContainer}>
+            {posts.map((post) => (
+              <OnePost title={post.title} body={post.body} />
+            )
+            )}
+          </div>
+        </>
+      }
+    </Layout >
   )
 }

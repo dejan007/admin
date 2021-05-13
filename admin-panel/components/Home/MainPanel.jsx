@@ -1,5 +1,5 @@
 import React from 'react';
-import SmallCard from '../ui/assets/SmallCard';
+import SmallCard from '../ui/assets/smallCard/SmallCard';
 import styles from './mainPanel.module.scss';
 function MainPanel() {
 
