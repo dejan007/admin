@@ -37,7 +37,7 @@ export default function Layout({ children }) {
 
             </div>
             <div className={styles.content}>
-                <main>{children}</main>
+                {children}
             </div>
         </>
     )

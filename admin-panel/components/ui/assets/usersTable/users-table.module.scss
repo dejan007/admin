@@ -1,0 +1,14 @@
+.tableWrapper {
+    width: auto;
+    height: 400px;
+}
+
+.MuiDataGrid-colCell .MuiDataGrid-colCellSortable  {
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 300px !important;
+}
+
+.MuiDataGrid-colCell-draggable {
+    width: 200px !important;
+}
