@@ -1,0 +1,36 @@
+
+ .scrollWrapper {
+     display: flex;
+     flex-direction: row;
+     margin-top: 40px;
+     margin-left: 30%;
+
+     svg {
+         fill: rgb(32, 145, 173);
+         margin-top: 50px;
+     }
+
+}
+  .container {
+      width: 300px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      .imageWrapper {
+        display: flex;
+        padding-right: 5px;
+    
+        img {
+            border-radius: 5px;
+            transition: 500ms;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+  }
+

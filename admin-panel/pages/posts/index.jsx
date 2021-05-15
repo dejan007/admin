@@ -17,8 +17,6 @@ export default function Index() {
     setPosts(response.data)
   }
 
-  console.log(posts);
-
   return (
     <Layout>
       <Head>

@@ -5,13 +5,10 @@ import Header from '../Header/Header.jsx';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import { useRouter } from 'next/router';
 
-const name = 'Dejan'
-export const siteTitle = 'Next.js Sample Website'
-
 export default function Layout({ children }) {
 
     const router = useRouter();
-    console.log(router.route);
+
     return (
         <>
             <Header />
