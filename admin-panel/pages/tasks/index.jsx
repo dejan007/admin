@@ -7,9 +7,9 @@ export default function Index() {
     <Layout>
       
      <Head>
-        <title>Buttons</title>
+        <title>Tasks</title>
       </Head>
-      <h1>Our custom buttons</h1>
+      <h1>Tasks</h1>
       
     </Layout>
   )

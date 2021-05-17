@@ -27,7 +27,7 @@ export default function Index() {
         <>
           <div className={styles.postsContainer}>
             {posts.map((post) => (
-              <OnePost title={post.title} body={post.body} />
+              <OnePost title={post.title} body={post.body} id={post.id}/>
             )
             )}
           </div>

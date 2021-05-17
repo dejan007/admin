@@ -6,6 +6,7 @@ import Fade from '@material-ui/core/Fade';
 
 function OnePost({ id, title, body }) {
     const [open, setOpen] = useState(false);
+    const images = ['mountains-5051149_1920.jpg', 'mountains-5801628_1920.jpg', 'sea-6159674_1920.jpg', 'woman-6012907_1920.jpg' ]
 
     const handleOpen = () => {
         setOpen(true);
@@ -18,8 +19,11 @@ function OnePost({ id, title, body }) {
     return (
         <>
             <div className={styles.container} onClick={handleOpen}>
+                <img src={'images/' + images[id % 4]} className={styles.postImage} />
+                <div className={styles.blogText}>
                 <div className={styles.title}>{title}</div>
                 <div className={styles.body}>{body}</div>
+                </div>
             </div>
             <Modal
                 aria-labelledby="post-title"

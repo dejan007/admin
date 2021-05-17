@@ -18,15 +18,39 @@
       color: white;
       padding-left: 25px;
       padding-top: 13px;
-      padding-bottom: 13px;
+      padding-bottom: 20px;
+      
       &:hover {
         text-decoration: none;
         background-color: #535253;
       }
+
+      .homeIcon {
+        transform: scale(0.83);
+        fill: rgb(60, 118, 194);
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 0 5px 0 0;
+        position: relative;
+        top: 10px;
+      }
+
+      .postsIcon {
+        transform: scale(0.75);
+        fill: rgb(198, 91, 224);
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 0 5px 0 0;
+        position: relative;
+        top: 10px;
+      }
     }
 
     .navActive {
-      background-color: #ff7fef;
+      background-color: #ffffff;
+      color:black;
     }
 
     svg {
