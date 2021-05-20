@@ -23,7 +23,7 @@ function HorizontalUsersScroll() {
         const containerScrollPosition = document.getElementById('container').scrollLeft;
         container.scrollTo({
             top: 0,
-            left: containerScrollPosition - 60,
+            left: containerScrollPosition - 80,
             behavior: 'smooth'
         })
     }
@@ -33,7 +33,7 @@ function HorizontalUsersScroll() {
         const containerScrollPosition = document.getElementById('container').scrollLeft;
         container.scrollTo({
             top: 0,
-            left: containerScrollPosition + 60,
+            left: containerScrollPosition + 80,
             behavior: 'smooth'
         })
     }
@@ -45,11 +45,9 @@ function HorizontalUsersScroll() {
             <div className={styles.container} onWheel={horizontalScroll} id='container'>
                 {imageTitles.map((imageTitle) => (
                     <div className={styles.imageWrapper}>
-                        <Image
+                        <img
                             src={"/images/" + imageTitle}
                             alt="Picture of the author"
-                            width={100}
-                            height={120}
                             quality={100}
                         />
                     </div>
