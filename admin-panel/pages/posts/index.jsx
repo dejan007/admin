@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head'
-import Layout from '../../components/ui/Layout/layout'
+import Layout from '../../components/ui/Layout/Layout'
 import axios from 'axios';
 import OnePost from '../../components/ui/assets/onePost/OnePost';
 import styles from './posts.module.scss';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
-import Layout from '../../components/ui/Layout/layout'
+import Layout from '../../components/ui/Layout/Layout'
 import MainPanel from '../../components/Home/MainPanel';
 
 export default function Index() {

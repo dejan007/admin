@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './task-item.module.scss';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
-function TaskItem({id, title, responsible, status}) {
+function TaskItem({id, title, responsible, status, deleteOneTask, setShowingTask}) {
+
 
     return(
-        <div key={id} className={styles.container}>
+        <div key={id} className={styles.container} onMouseEnter={()=>setShowingTask({id: id, title:title, responsible:responsible, status:status})} onMouseLeave={()=>setShowingTask(false)}>
             <div className={`${styles.line} ${styles.blueLine}`}></div>
             <div className={styles.textWrapper}>
                 <div className={styles.title}>{title}</div>
@@ -15,6 +17,7 @@ function TaskItem({id, title, responsible, status}) {
                             status === "IN REVIEW" ? `${styles.status} ${styles.statusINREVIEW}`:
                             `${styles.status} ${styles.statusFINISHED}`
                             }>{status}</div>
+                            <DeleteForeverIcon onClick={()  => {deleteOneTask(id); setShowingTask(false)}} />
             
         </div>
     );

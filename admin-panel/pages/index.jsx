@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/ui/Layout/layout'
+import Layout from '../components/ui/Layout/Layout'
 import Router from 'next/router'
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Home</title>
       </Head>
      
     </Layout>
