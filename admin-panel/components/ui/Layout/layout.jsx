@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './layout.module.scss'
 import Link from 'next/link'
 import Header from '../Header/Header.jsx';
@@ -6,9 +6,10 @@ import LocalBarIcon from '@material-ui/icons/LocalBar';
 import { useRouter } from 'next/router';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import ThemeContext from '../../../contexts/ThemeContext';
 
 export default function Layout({ children }) {
-
+    const { theme, setTheme } = useContext(ThemeContext);
     const router = useRouter();
 
     return (
@@ -37,7 +38,7 @@ export default function Layout({ children }) {
                 </div>
 
             </div>
-            <div className={styles.content}>
+            <div className={`${styles.content} ${theme}`}>
                 {children}
             </div>
         </>

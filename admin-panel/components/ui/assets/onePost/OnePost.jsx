@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './onePost.module.scss';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import ThemeContext from '../../../../contexts/ThemeContext';
 
 function OnePost({ id, title, body }) {
+    const { theme } = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
     const images = ['mountains-5051149_1920.jpg', 'mountains-5801628_1920.jpg', 'sea-6159674_1920.jpg', 'woman-6012907_1920.jpg' ]
 
@@ -18,7 +20,7 @@ function OnePost({ id, title, body }) {
 
     return (
         <>
-            <div className={styles.container} onClick={handleOpen}>
+            <div  className= {`${styles.container} ${theme}`}onClick={handleOpen}>
                 <img src={'images/' + images[id % 4]} className={styles.postImage} />
                 <div className={styles.blogText}>
                 <div className={styles.title}>{title}</div>
@@ -38,9 +40,10 @@ function OnePost({ id, title, body }) {
                 }}
             >
                 <Fade in={open}>
-                    <div className={styles.modalContainer}>
-                        <h2 id="post-title">{title}</h2>
-                        <p id="post-body">{body}</p>
+                    <div className={`${styles.modalContainer} ${theme}`}>
+                    <img src={'images/' + images[id % 4]} className={styles.postImage} />
+                        <h3 id="post-title">{title}</h3>
+                        <p id="post-body">{body}{body}</p>
                     </div>
                 </Fade>
             </Modal>

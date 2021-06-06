@@ -22,7 +22,6 @@ export default function Index() {
       <Head>
         <title>Posts</title>
       </Head>
-      <h1>Posts</h1>
       {posts &&
         <>
           <div className={styles.postsContainer}>

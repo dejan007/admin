@@ -7,6 +7,8 @@ body {
   line-height: 1.6;
   font-size: 18px;
   background-color: #eef0f2;
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
 }
 
 * {
@@ -25,4 +27,9 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+.App {
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
 }
