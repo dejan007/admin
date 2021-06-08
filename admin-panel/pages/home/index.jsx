@@ -11,7 +11,6 @@ export default function Index() {
      <Head>
         <title>Home</title>
       </Head>
-      <h1>HOME</h1>
       <MainPanel />
     </Layout>
   )

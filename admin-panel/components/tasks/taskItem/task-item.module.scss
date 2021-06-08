@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: row;
     border-top: thin gray solid;
+    background: var(--theme-page-background);
+    color: var(--theme-page-text);
    
 
     svg {
@@ -47,7 +49,7 @@
         padding-top: 7px;
 
         .title {
-            color: rgb(51, 51, 51);
+            color: var(--theme-page-text);
             font-weight: bolder;
         }
 

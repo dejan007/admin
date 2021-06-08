@@ -12,7 +12,7 @@ function Header() {
 
     return (
         <div className={styles.headerContainer}>
-            <button onClick={changeTheme}> Click</button>
+            <button onClick={changeTheme} className={`${styles.button} ${theme}`}> Change theme</button>
         </div>
     )
 }

@@ -20,7 +20,7 @@ function OnePost({ id, title, body }) {
 
     return (
         <>
-            <div  className= {`${styles.container} ${theme}`}onClick={handleOpen}>
+            <div  className= {`${styles.container} ${theme}`} onClick={handleOpen}>
                 <img src={'images/' + images[id % 4]} className={styles.postImage} />
                 <div className={styles.blogText}>
                 <div className={styles.title}>{title}</div>

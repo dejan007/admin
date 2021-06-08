@@ -1,12 +1,27 @@
 .headerContainer {
     position: absolute;
     left: 200px;
-    background-color: rgb(233, 229, 229);
     border-bottom: gray solid thin;
     height: 60px;
-    width: 100%;
+    width: calc(100vw - 220px);
+    background: var(--theme-page-background);
+    color: var(--theme-page-text);
 }
 
 .button {
-    background-color: var(--theme-color);
+    background: var(--theme-page-background);
+    color: var(--theme-page-text);
+    border-radius: 10px;
+    padding: 10px;
+    border: thin gray solid;
+    position: absolute;
+    top:10px;
+    right:10px;
+    transition: 200ms;
+
+    &:hover {
+        background-color: rgb(190, 183, 183);
+        color: white;
+        border: none;
+    }
 }

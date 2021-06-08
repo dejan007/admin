@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './task-item.module.scss';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import ThemeContext from '../../../contexts/ThemeContext';
+
 
 function TaskItem({id, title, responsible, status, deleteOneTask, setShowingTask}) {
-
+    const { theme } = useContext(ThemeContext);
 
     return(
-        <div key={id} className={styles.container} onMouseEnter={()=>setShowingTask({id: id, title:title, responsible:responsible, status:status})} onMouseLeave={()=>setShowingTask(false)}>
+        <div key={id} className={`${styles.container} ${theme}`} onMouseEnter={()=>setShowingTask({id: id, title:title, responsible:responsible, status:status})} onMouseLeave={()=>setShowingTask(false)}>
             <div className={`${styles.line} ${styles.blueLine}`}></div>
             <div className={styles.textWrapper}>
                 <div className={styles.title}>{title}</div>
