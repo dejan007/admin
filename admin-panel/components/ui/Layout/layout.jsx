@@ -32,9 +32,13 @@ export default function Layout({ children }) {
                     <Link href="/tasks">
                         <a className={router.route==='/tasks' ? styles.navActive: undefined}>Tasks</a>
                     </Link>
+                    <Link href="/orders">
+                        <a className={router.route==='/orders' ? styles.navActive: undefined}>Orders</a>
+                    </Link>
                     <Link href="/contact">
                         <a className={router.route==='/contact' ? styles.navActive: undefined}>Contact</a>
                     </Link>
+                    
                 </div>
 
             </div>
