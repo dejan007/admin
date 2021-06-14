@@ -41,7 +41,6 @@ const columns = [
 
 const rows = [
   { name: "John", code: "345611", location: "London", price: "344$", status: <span className={styles.shipped}>SHIPPED</span> },
-  { name: "Eric", code: "321100", location: "New York", price: "123$", status: <span className={styles.ready}>READY</span> },
   { name: "Maria", code: "773321", location: "Belgrade", price: "221$", status: <span className={styles.delivered}>DELIVERED</span> },
   { name: "Tom", code: "112252", location: "Prague", price: "1344$", status: <span className={styles.failed}>FAILED</span> },
   { name: "Alice", code: "34111", location: "Nice", price: "2224$", status: <span className={styles.shipped}>SHIPPED</span> },
@@ -64,8 +63,10 @@ function OrderTable() {
   };
 
   return (
-    <Paper className={`${classes.root} ${theme}`}>
-      <TableContainer className={classes.container}>
+    <>
+    <p className={styles.ordersHeader}>Recent orders</p>
+    <Paper className={`${styles.container} ${theme}`}>
+      <TableContainer>
         <Table stickyHeader aria-label="sticky table">
           <TableHead >
             <TableRow >
@@ -74,7 +75,7 @@ function OrderTable() {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
-                  className={`${classes.head} ${theme}`}
+                  className={`${classes.cell} ${theme}`}
                 >
                   {column.label}
                 </TableCell>
@@ -84,7 +85,7 @@ function OrderTable() {
           <TableBody>
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                <TableRow role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
@@ -110,26 +111,14 @@ function OrderTable() {
         className={`${classes.pagination} ${theme}`}
       />
     </Paper>
+    </>
   );
 }
 
 const useStyles = makeStyles({
-  root: {
-    width: '95%',
-    background: "var(--theme-page-background)",
-    color: "var(--theme-page-text)"
-  },
-  container: {
-    maxHeight: 440,
-  },
   cell: {
     background: "var(--theme-page-background)",
     color: "var(--theme-page-text)",
-    '&:hover': {
-      background: 'gray',
-      color: 'white',
-    },
-
   },
   head: {
     fontWeight: '600',
