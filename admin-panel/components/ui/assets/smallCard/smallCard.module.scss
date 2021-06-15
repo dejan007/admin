@@ -1,13 +1,11 @@
 .container {
-    width: 310px;
-    height: 180px;
     background-color: rgb(243, 242, 240);
     border: solid thin rgb(184, 181, 181);
     border-radius: 10px;
-
     display:flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 5px;
 
     .value {
         text-align: center;

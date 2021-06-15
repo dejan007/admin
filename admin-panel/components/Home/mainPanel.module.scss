@@ -1,2 +1,15 @@
 .container {
 }
+
+.chartsWrapper{
+display: flex;
+flex-wrap: wrap;
+  
+    .chartWrapper {
+        width: 47%;
+        height: 300px;
+        min-width: 330px;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+}
