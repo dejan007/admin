@@ -6,7 +6,11 @@ import LocalBarIcon from '@material-ui/icons/LocalBar';
 import { useRouter } from 'next/router';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import ThemeContext from '../../../contexts/ThemeContext';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import EmailIcon from '@material-ui/icons/Email';
 
 export default function Layout({ children }) {
     const { theme, setTheme } = useContext(ThemeContext);
@@ -20,23 +24,27 @@ export default function Layout({ children }) {
                 <div className={styles.navigationWrapper}>
                     <Link href="/home">
                         <a className={router.route==='/home' ? styles.navActive: undefined}>
-                             <EqualizerIcon className={styles.homeIcon} />Home</a>
+                             <EqualizerIcon className={`${styles.icon} ${styles.homeIcon}`} />Home</a>
                     </Link>
                     <Link href="/posts">
                         <a className={router.route==='/posts' ? styles.navActive: undefined}>
-                         <LibraryBooksIcon className={styles.postsIcon}/>Posts</a>
+                         <LibraryBooksIcon className={`${styles.icon} ${styles.postsIcon}`}/>Posts</a>
                     </Link>
                     <Link href="/users">
-                        <a className={router.route==='/users' ? styles.navActive: undefined}>Users</a>
+                        <a className={router.route==='/users' ? styles.navActive: undefined}>
+                            <PeopleAltIcon className={`${styles.icon} ${styles.usersIcon}`}/>Users</a>
                     </Link>
                     <Link href="/tasks">
-                        <a className={router.route==='/tasks' ? styles.navActive: undefined}>Tasks</a>
+                        <a className={router.route==='/tasks' ? styles.navActive: undefined}>
+                            <AssignmentTurnedInIcon className={`${styles.icon} ${styles.tasksIcon}`}/>Tasks</a>
                     </Link>
                     <Link href="/orders">
-                        <a className={router.route==='/orders' ? styles.navActive: undefined}>Orders</a>
+                        <a className={router.route==='/orders' ? styles.navActive: undefined}>
+                            <ShoppingCartIcon className={`${styles.icon} ${styles.ordersIcon}`}/>Orders</a>
                     </Link>
                     <Link href="/contact">
-                        <a className={router.route==='/contact' ? styles.navActive: undefined}>Contact</a>
+                        <a className={router.route==='/contact' ? styles.navActive: undefined}>
+                            <EmailIcon className={`${styles.icon} ${styles.contactIcon}`}/>Contact</a>
                     </Link>
                     
                 </div>
