@@ -37,3 +37,11 @@
         padding: 5px;
     }
 }
+
+@media(max-width: 1030px) {
+    .container {
+        width: 50%;
+        min-width: 450px;
+    }
+   
+}

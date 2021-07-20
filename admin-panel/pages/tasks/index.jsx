@@ -23,7 +23,6 @@ const [showingTask, setShowingTask] = useState(false);
       <Head>
         <title>Tasks</title>
       </Head>
-      <h1>Tasks</h1>
       <AddTask tasks={tasks} setTasks={setTasks}/>
       <div className={styles.contentWrapper}>
         <TasksTable  tasks={tasks} setTasks={setTasks} showingTask={showingTask} setShowingTask={setShowingTask}/>
