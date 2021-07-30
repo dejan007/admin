@@ -46,6 +46,7 @@ function AddTask({ tasks, setTasks }) {
         setTitle('');
         setResponsible('');
         setStatus('');
+        handleClose();
     }
 
     return (
