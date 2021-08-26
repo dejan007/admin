@@ -25,3 +25,11 @@
         border: none;
     }
 }
+
+@media(max-width: 666px) {
+    .headerContainer {
+        width: 100vw;
+        left: 0;
+    }
+   
+}

@@ -96,3 +96,35 @@
   .backToHome {
     margin: 3rem 0 0;
   }
+  
+  .menuIcon {
+    z-index: 200;
+    position: absolute;
+    cursor:pointer;
+    visibility: hidden;
+    transform: scale(1.5);
+    top: 20px;
+    left: 20px;
+    fill: blueviolet;
+  }
+
+  .visible {
+    visibility: visible !important;
+  }
+
+  @media(max-width: 666px) {
+    .container {
+      visibility: hidden;
+      z-index: 5;
+    }
+
+    .menuIcon {
+      visibility: visible;
+    }
+
+    .content {
+      left: 10px;
+      width: 95%;
+    }
+   
+}

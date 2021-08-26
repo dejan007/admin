@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5px;
+    min-width: 200px;
 
     .value {
         text-align: center;
@@ -25,4 +26,11 @@
         font-size: 1.3em;
         padding-top: 20px;
     }
+}
+
+@media(max-width: 666px) {
+    .container {
+        margin: 5px 15px;
+    }
+   
 }

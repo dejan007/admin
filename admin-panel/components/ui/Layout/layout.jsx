@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styles from './layout.module.scss'
 import Link from 'next/link'
 import Header from '../Header/Header.jsx';
@@ -11,15 +11,22 @@ import ThemeContext from '../../../contexts/ThemeContext';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import EmailIcon from '@material-ui/icons/Email';
+import MenuIcon from '@material-ui/icons/Menu';
 
 export default function Layout({ children }) {
     const { theme, setTheme } = useContext(ThemeContext);
     const router = useRouter();
+    const [visible, setVisible] = useState();
+
+
+console.log(visible);
 
     return (
         <>
             <Header />
-            <div className={styles.container}>
+            <MenuIcon className={styles.menuIcon} onClick = {() => setVisible(!visible)}/>
+          
+            <div className={visible ? `${styles.container} ${styles.visible}` : styles.container}>
                 <LocalBarIcon />
                 <div className={styles.navigationWrapper}>
                     <Link href="/home">
@@ -50,6 +57,7 @@ export default function Layout({ children }) {
                 </div>
 
             </div>
+            
             <div className={`${styles.content} ${theme}`}>
                 {children}
             </div>
