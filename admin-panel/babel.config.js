@@ -42,6 +42,7 @@ module.exports = {
         [
           "minify", // why add minify here, we run uglify over the whole code bundles
           {
+            builtIns: false,
             mangle: false,
             evaluate: false
           }
