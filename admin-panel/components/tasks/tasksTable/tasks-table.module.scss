@@ -12,7 +12,7 @@
     background: var(--theme-page-background);
     color: var(--theme-page-text);
     .tableHeader {
-        color: rgb(78, 77, 77);
+        color: var(--theme-page-text);
         height: 40px;
 
         svg {

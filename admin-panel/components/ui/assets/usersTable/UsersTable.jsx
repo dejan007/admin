@@ -1,45 +1,157 @@
-import * as React from 'react';
-import { DataGrid } from '@material-ui/data-grid';
+import React, { useContext } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
 import styles from './users-table.module.scss';
+import ThemeContext from '../../../../contexts/ThemeContext';
 
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
+  { id: 'name', label: 'Name', minWidth: 170 },
+  { id: 'country', label: 'Country', minWidth: 100 },
   {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90,
+    id: 'age',
+    label: 'Age',
+    minWidth: 170,
+    align: 'right',
+
   },
   {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
+    id: 'member',
+    label: 'Member since',
+    minWidth: 170,
+    align: 'right',
+  },
+  {
+    id: 'rating',
+    label: 'Rating',
+    minWidth: 170,
+    align: 'right',
   },
 ];
 
 const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 33 },
-  { id: 2, lastName: 'Sparrow', firstName: 'Jack', age: 42 },
-  { id: 3, lastName: 'Damon', firstName: 'Matt', age: 45 },
-  { id: 4, lastName: 'Diesel', firstName: 'Vin', age: 16 },
-  { id: 5, lastName: 'Pacino', firstName: 'Al', age: 44 },
-  { id: 6, lastName: 'Sheen', firstName: 'Charlie', age: 150 },
-  { id: 7, lastName: 'Safet', firstName: 'Safet', age: 44 },
-  { id: 8, lastName: 'Robbins', firstName: 'Tim', age: 36 },
-  { id: 9, lastName: 'Lindsey', firstName: 'Sam', age: 65 },
+  {
+    name: 'Jack',
+    country: 'USA',
+    age: 34,
+    member: 2005,
+    rating: 78
+  },
+  {
+    name: 'Alison',
+    country: 'Australia',
+    age: 31,
+    member: 2012,
+    rating: 73
+  },
+  {
+    name: 'Peter',
+    country: 'UK',
+    age: 22,
+    member: 2018,
+    rating: 82
+  },
+  {
+    name: 'Ted',
+    country: 'Canada',
+    age: 25,
+    member: 2011,
+    rating: 728
+  },
+  {
+    name: 'Suresh',
+    country: 'India',
+    age: 29,
+    member: 2009,
+    rating: 86
+  },
+  {
+    name: 'Anne',
+    country: 'Sweden',
+    age: 21,
+    member: 2019,
+    rating: 79
+  },
 ];
 
+
+
 export default function DataTable() {
+  const classes = useStyles();
+  const { theme } = useContext(ThemeContext);
+
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
+
   return (
-    <div className={styles.tableWrapper}>
-      <DataGrid rows={rows} columns={columns} pageSize={10} checkboxSelection />
-    </div>
+    <Paper >
+      <TableContainer className={styles.tableContainer}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                  className={`${classes.cell} ${theme}`}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => {
+              return (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  {columns.map((column) => {
+                    const value = row[column.id];
+                    return (
+                      <TableCell key={column.id} align={column.align}  className={`${classes.cell} ${theme}`}>
+                        {column.format && typeof value === 'number' ? column.format(value) : value}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
   );
 }
+
+const useStyles = makeStyles({
+  cell: {
+    background: "var(--theme-page-background)",
+    color: "var(--theme-page-text)",
+  },
+  head: {
+    fontWeight: '600',
+    background: "var(--theme-page-background)",
+    color: "var(--theme-page-text)"
+  },
+  pagination: {
+    background: "var(--theme-page-background)",
+    color: "var(--theme-page-text)"
+  }
+});

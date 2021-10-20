@@ -22,6 +22,7 @@
       .imageWrapper {
         display: flex;
         padding-right: 5px;
+        height: 250px;
     
         img {
             border-radius: 5px;
@@ -35,5 +36,9 @@
             }
         }
     }
+  }
+
+  .arrowIcons {
+      cursor: pointer;
   }
 

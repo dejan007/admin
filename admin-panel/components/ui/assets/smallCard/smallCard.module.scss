@@ -1,5 +1,6 @@
 .container {
-    background-color: rgb(243, 242, 240);
+    background: var(--theme-page-background);
+    color: var(--theme-page-text);
     border: solid thin rgb(184, 181, 181);
     border-radius: 10px;
     display:flex;
@@ -7,6 +8,10 @@
     justify-content: center;
     margin-bottom: 5px;
     min-width: 200px;
+
+    &:hover {
+        border: solid 1px rgb(218,165,32);
+    }
 
     .value {
         text-align: center;
@@ -21,7 +26,7 @@
     }
 
     .title {
-        color: rgb(68, 66, 66);
+        color: rgb(218,165,32);
         text-align: center;
         font-size: 1.3em;
         padding-top: 20px;
@@ -30,7 +35,9 @@
 
 @media(max-width: 666px) {
     .container {
-        margin: 5px 15px;
+        //margin: 5px 15px;
+        width: 60%;
+        margin-left: 25%;
     }
    
 }

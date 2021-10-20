@@ -10,7 +10,6 @@ export default function Index() {
       <Head>
         <title>Users</title>
       </Head>
-      <h1>Users</h1>
       <DataTable />
 
       <HorizontalUsersScroll />

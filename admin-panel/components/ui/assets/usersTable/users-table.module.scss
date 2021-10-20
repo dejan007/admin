@@ -1,14 +1,11 @@
-.tableWrapper {
-    width: auto;
-    height: 400px;
+.tableContainer {
+  max-height: 400px;
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
 }
 
-.MuiDataGrid-colCell .MuiDataGrid-colCellSortable  {
-    width: 200px !important;
-    min-width: 200px !important;
-    max-width: 300px !important;
-}
-
-.MuiDataGrid-colCell-draggable {
-    width: 200px !important;
+.MuiTableContainer-root {
+    margin: 10px;
+    background: var(--theme-page-background);
+    color: var(--theme-page-text);
 }

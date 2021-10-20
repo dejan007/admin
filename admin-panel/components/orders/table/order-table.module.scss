@@ -2,12 +2,13 @@
 .container {
   width: 95%;
   margin-bottom: 50px;
+  border: white solid;
 }
 
 .ordersHeader {
   font-size: larger;
   font-weight: 640;
-  color: rgb(34, 104, 104);
+  color: var(--theme-page-text);
 }
 
 .MuiSelect-icon {

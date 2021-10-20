@@ -23,7 +23,7 @@ function HorizontalUsersScroll() {
         const containerScrollPosition = document.getElementById('container').scrollLeft;
         container.scrollTo({
             top: 0,
-            left: containerScrollPosition - 80,
+            left: containerScrollPosition - 150,
             behavior: 'smooth'
         })
     }
@@ -33,7 +33,7 @@ function HorizontalUsersScroll() {
         const containerScrollPosition = document.getElementById('container').scrollLeft;
         container.scrollTo({
             top: 0,
-            left: containerScrollPosition + 80,
+            left: containerScrollPosition + 150,
             behavior: 'smooth'
         })
     }
@@ -41,7 +41,7 @@ function HorizontalUsersScroll() {
     return (
         <div className={styles.scrollWrapper}>
 
-            <ArrowBackIosIcon onClick={scrollLeft} />
+            <ArrowBackIosIcon onClick={scrollLeft} className={styles.arrowIcons}/>
             <div className={styles.container} onWheel={horizontalScroll} id='container'>
                 {imageTitles.map((imageTitle) => (
                     <div className={styles.imageWrapper}>
@@ -54,7 +54,7 @@ function HorizontalUsersScroll() {
                 )
                 )}
             </div>
-            <ArrowForwardIosIcon onClick={scrollRight} />
+            <ArrowForwardIosIcon onClick={scrollRight} className={styles.arrowIcons} />
 
         </div>
     );
