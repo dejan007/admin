@@ -2,8 +2,8 @@
  .scrollWrapper {
      display: flex;
      flex-direction: row;
-     margin-top: 40px;
-     margin-left: 30%;
+     width: 50%;
+     margin: 20px auto;
 
      svg {
          fill: rgb(32, 145, 173);
@@ -41,4 +41,10 @@
   .arrowIcons {
       cursor: pointer;
   }
+
+  @media(max-width: 666px) {
+    .scrollWrapper {
+        width: 60%;
+    }
+ }
 

@@ -19,7 +19,6 @@ export default function Layout({ children }) {
     const [visible, setVisible] = useState();
 
 
-console.log(visible);
 
     return (
         <>
@@ -27,7 +26,7 @@ console.log(visible);
             <MenuIcon className={styles.menuIcon} onClick = {() => setVisible(!visible)}/>
           
             <div className={visible ? `${styles.container} ${styles.visible}` : styles.container}>
-                <LocalBarIcon />
+                
                 <div className={styles.navigationWrapper}>
                     <Link href="/home">
                         <a className={router.route==='/home' ? styles.navActive: undefined}>
