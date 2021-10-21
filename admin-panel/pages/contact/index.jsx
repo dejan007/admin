@@ -9,17 +9,38 @@ export default function Index() {
   const [name, setName] = useState('');
   const [mail, setMail] = useState('');
   const [message, setMessage] = useState('');
+  const [validMail, setValidMail] = useState(false);
+  const [popUpOpen, setPopUpOpen] = useState(false);
+  const [popUpText, setPopUpText] = useState('');
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   }
 
   const handleMailChange = (e) => {
+    setValidMail(validateEmail(e.target.value));
     setMail(e.target.value);
   }
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
+  }
+
+  const validateEmail = (email) => {
+        var regex = /\S+@\S+\.\S+/;
+        return regex.test(email);
+    }
+    
+  const handleSubmit = () =>  {
+    setPopUpOpen(true);
+    if (name && mail && validMail && message) {
+      setPopUpText('Thanks for submitting  your message !');
+    } else if (!name || !mail || !message) {
+      setPopUpText('Please fill in all fields !')
+    } else (
+      setPopUpText('Please fill in a valid email !')
+    )
+
   }
 
   return (
@@ -37,14 +58,24 @@ export default function Index() {
         </div>
         <div className={styles.inputContainer}>
           <input className={styles.inputField} value={mail} type="text" name="email" placeholder="Your mail" onChange={handleMailChange} />
-          {mail && <CheckCircleIcon className={styles.checkIcon}/> }
+          {mail && validMail && <CheckCircleIcon className={styles.checkIcon}/> }
         </div>
         <div className={styles.inputContainer}>
           <textarea className={styles.textField} value={message} name="text" placeholder="Your message/question" onChange={handleMessageChange} />
           {message && <CheckCircleIcon className={styles.checkIconMessage}/> }
         </div>
-        <button className={styles.contactButton}> Contact us !</button>
+        <button className={styles.contactButton} onClick={handleSubmit}> Contact us !</button>
       </div>
+      {popUpOpen &&
+        <div className={styles.popUp}>
+          <div className={styles.line}></div>
+          <div className={styles.popUpText}>
+            {popUpText}
+          </div>
+        
+        </div>
+      }
+      
       
 
     </Layout>

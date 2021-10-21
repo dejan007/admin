@@ -97,6 +97,28 @@
     -webkit-text-fill-color: transparent;
 }
 
+.popUp {
+    border-radius: 10px;
+    margin-left: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+    box-shadow: 0 0 20px #eee;
+    &:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .popUpText {
+        color: white;
+    }
+}
+
 
 
  
