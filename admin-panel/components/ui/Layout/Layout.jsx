@@ -36,9 +36,9 @@ export default function Layout({ children }) {
                         <a className={router.route==='/posts' ? styles.navActive: undefined}>
                          <LibraryBooksIcon className={`${styles.icon} ${styles.postsIcon}`}/>Posts</a>
                     </Link>
-                    <Link href="/users">
-                        <a className={router.route==='/users' ? styles.navActive: undefined}>
-                            <PeopleAltIcon className={`${styles.icon} ${styles.usersIcon}`}/>Users</a>
+                    <Link href="/authors">
+                        <a className={router.route==='/authors' ? styles.navActive: undefined}>
+                            <PeopleAltIcon className={`${styles.icon} ${styles.usersIcon}`}/>Authors</a>
                     </Link>
                     <Link href="/tasks">
                         <a className={router.route==='/tasks' ? styles.navActive: undefined}>

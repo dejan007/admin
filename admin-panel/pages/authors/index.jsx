@@ -12,7 +12,6 @@ export default function Index() {
       </Head>
       <DataTable />
 
-      <HorizontalUsersScroll />
     </Layout>
   )
 }

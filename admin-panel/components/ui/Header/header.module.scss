@@ -10,7 +10,7 @@
 
 .button {
     background: var(--theme-page-background);
-    color: var(--theme-page-text);
+    color: green;
     border-radius: 10px;
     padding: 10px;
     border: thin gray solid;
@@ -20,9 +20,9 @@
     transition: 400ms;
 
     &:hover {
-        background-color: rgb(131, 28, 131);
-        color: white;
-        border: none;
+        //background-color: rgb(131, 28, 131);
+        border: thin solid green;
+        cursor: pointer;
     }
 }
 

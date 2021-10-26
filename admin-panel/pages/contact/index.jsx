@@ -65,8 +65,8 @@ export default function Index() {
           {message && <CheckCircleIcon className={styles.checkIconMessage}/> }
         </div>
         <button className={styles.contactButton} onClick={handleSubmit}> Contact us !</button>
-      </div>
-      {popUpOpen &&
+
+        {popUpOpen &&
         <div className={styles.popUp}>
           <div className={styles.line}></div>
           <div className={styles.popUpText}>
@@ -75,6 +75,8 @@ export default function Index() {
         
         </div>
       }
+      </div>
+      
       
       
 
