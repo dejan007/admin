@@ -61,6 +61,16 @@
         border-top-right-radius: 10px;
     }
 
+.author {
+    width: fit-content;
+    color: gray;
+    
+    &:hover {
+        color: rgb(42, 129, 243);
+        cursor: pointer;
+    }
+}
+
     @media(max-width: 650px) {
        .container {
            width: 200px;

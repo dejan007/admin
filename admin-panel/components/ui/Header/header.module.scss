@@ -28,8 +28,8 @@
 
 @media(max-width: 666px) {
     .headerContainer {
-        width: 100vw;
-        left: 0;
+       min-width: 100vw;
+       left: 0;
     }
    
 }

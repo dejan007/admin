@@ -7,13 +7,19 @@ function Header() {
     const { theme, setTheme } = useContext(ThemeContext);
 
     const changeTheme = () => {
-        theme==='light' ? setTheme('dark') : setTheme('light');
+        theme === 'light' ? setTheme('dark') : setTheme('light');
     }
 
     return (
-        <div className={styles.headerContainer}>
-            <button onClick={changeTheme} className={`${styles.button} ${theme}`}> Change theme</button>
-        </div>
+        <>
+            <head>
+                <meta name="viewport"
+                    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+            </head>
+            <div className={styles.headerContainer}>
+                <button onClick={changeTheme} className={`${styles.button} ${theme}`}> Change theme</button>
+            </div>
+        </>
     )
 }
 

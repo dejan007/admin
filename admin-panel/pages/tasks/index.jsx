@@ -9,11 +9,11 @@ import TaskDescription from '../../components/tasks/taskDescription/TaskDescript
 export default function Index() {
 
   const [tasks, setTasks] = useState([
-    {id:1, title:"Button style" , responsible:"Jack", status:'TODO' },
+    {id:1, title:"Write about Weather" , responsible:"Jack", status:'TODO' },
     {id:2, title:"Create login form" , responsible:"Alice", status:'IN PROGRESS' },
-    {id:234003, title:"Fix bugs" , responsible:"Helene", status:'IN REVIEW' },
-    {id:3311, title:"Create modal" , responsible:"Eric", status:'FINISHED' },
-    {id:211, title:"Delete icons" , responsible:"Sawyer", status:'TODO' },
+    {id:234003, title:"Fix last article pls" , responsible:"Helene", status:'IN REVIEW' },
+    {id:3311, title:"Research about gold price" , responsible:"Eric", status:'FINISHED' },
+    {id:211, title:"Interview with CEO" , responsible:"Sawyer", status:'TODO' },
 ]);
 
 const [showingTask, setShowingTask] = useState(false);

@@ -59,8 +59,8 @@ export default function LineChart1() {
           <YAxis yAxisId="right" orientation="right" />
           <Tooltip />
           <Legend />
-          <Line name="Man" yAxisId="left" type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line name="Woman" yAxisId="right" type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line name="Male visitors" yAxisId="left" type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line name="Female visitors" yAxisId="right" type="monotone" dataKey="uv" stroke="#82ca9d" />
         </LineChart>
       </ResponsiveContainer>
     );

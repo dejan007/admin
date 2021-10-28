@@ -4,39 +4,39 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 const data = [
   {
     name: 'Monday',
-    Delivered: 4000,
-    InProgress: 2400,
+    PostsWriten: 10,
+    PostsUpdated: 11,
     
   },
   {
     name: 'Tuesday',
-    Delivered: 3000,
-    InProgress: 1398,
+    PostsWriten: 12,
+    PostsUpdated: 16,
   },
   {
     name: 'Wednesday',
-    Delivered: 2000,
-    InProgress: 9800,
+    PostsWriten: 15,
+    PostsUpdated: 22,
   },
   {
     name: 'Thursday',
-    Delivered: 2780,
-    InProgress: 3908,
+    PostsWriten: 32,
+    PostsUpdated: 11,
   },
   {
     name: 'Friday',
-    Delivered: 1890,
-    InProgress: 4800,
+    PostsWriten: 22,
+    PostsUpdated: 13,
   },
   {
     name: 'Saturday',
-    Delivered: 2390,
-    InProgress: 3800,
+    PostsWriten: 4,
+    PostsUpdated: 6,
   },
   {
     name: 'Sunday',
-    Delivered: 3490,
-    InProgress: 4300,
+    PostsWriten: 7,
+    PostsUpdated: 2,
   },
 ];
 
@@ -58,8 +58,8 @@ function SimpleBarChart () {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar name="Delivered" dataKey="Delivered" stackId="a" fill="#d84aac" />
-          <Bar name="In Progress" dataKey="InProgress" stackId="b" fill="#82ca9d" />
+          <Bar name="Posts writen" dataKey="PostsWriten" stackId="a" fill="#d84aac" />
+          <Bar name="Posts updated" dataKey="PostsUpdated" stackId="b" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
     );
