@@ -8,7 +8,7 @@ export default function OrdersMap() {
     const mapStyles = {
         height: "500px",
         width: "95%",
-        minWidth: "500px",
+        minWidth: "350px",
         marginBottom: "30px"
     };
 
@@ -61,7 +61,7 @@ export default function OrdersMap() {
     const onSelect = item => {
         setSelected(item);
     }
-    console.log(selected);
+
     return (
         <div className={styles.wrapper}>
             <p className={styles.tip}>*Click on pin for details</p>

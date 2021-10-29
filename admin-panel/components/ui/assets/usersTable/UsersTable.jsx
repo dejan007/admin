@@ -274,7 +274,7 @@ export default function DataTable() {
             <TableBody>
               {rows.map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code} onClick={() => onTableClick(row)} className={classes.row}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.image+row.name} onClick={() => onTableClick(row)} className={classes.row}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

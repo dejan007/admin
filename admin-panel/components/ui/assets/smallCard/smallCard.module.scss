@@ -1,7 +1,10 @@
 .container {
-    background: var(--theme-page-background);
-    color: var(--theme-page-text);
-    border: solid thin rgb(184, 181, 181);
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+    
+
+    color: white;
+   
     border-radius: 10px;
     display:flex;
     flex-direction: column;
@@ -10,7 +13,7 @@
     min-width: 200px;
 
     &:hover {
-        border: solid 1px rgb(218,165,32);
+       
     }
 
     .value {
@@ -20,15 +23,15 @@
 
         svg {
             height: 35px;
-            transform: scaleY(1.2);
-            fill: green;
+            transform:rotate(180deg);
+            fill: white;
         }
     }
 
     .title {
-        color: rgb(218,165,32);
+        color: white;
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1.2em;
         padding-top: 20px;
     }
 }
@@ -37,7 +40,7 @@
     .container {
         //margin: 5px 15px;
         width: 60%;
-        margin-left: 25%;
+        margin-left: 22%;
 
         .value {
             font-size: 2.2em;
