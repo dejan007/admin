@@ -8,6 +8,22 @@
     color: var(--theme-page-text);
 }
 
+.headerText {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 0.85em;
+    color: gray;
+
+    span {
+        color:#4256c7;
+
+        &:hover {
+            color:rgb(55, 156, 240);
+            cursor: pointer;
+        }
+    }
+}
+
 .button {
     background: var(--theme-page-background);
     color: green;
@@ -30,6 +46,12 @@
     .headerContainer {
        min-width: 100vw;
        left: 0;
+    }
+
+    .headerText {
+        margin-left: 60px;
+        font-size: 0.7em;
+        width: 140px;
     }
    
 }

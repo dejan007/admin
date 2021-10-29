@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Layout from '../../components/ui/Layout/Layout'
 import styles from './contact.module.scss';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import { send } from 'emailjs-com';
 
 export default function Index() {
 
@@ -12,6 +13,13 @@ export default function Index() {
   const [validMail, setValidMail] = useState(false);
   const [popUpOpen, setPopUpOpen] = useState(false);
   const [popUpText, setPopUpText] = useState('');
+
+  const [toSend, setToSend] = useState({
+    fromName: '',
+    mail: '',
+    toName: '',
+    message: '',
+  });
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -27,13 +35,33 @@ export default function Index() {
   }
 
   const validateEmail = (email) => {
-        var regex = /\S+@\S+\.\S+/;
-        return regex.test(email);
-    }
-    
-  const handleSubmit = () =>  {
+    var regex = /\S+@\S+\.\S+/;
+    return regex.test(email);
+  }
+
+  const handleSubmit = () => {
+
+
     setPopUpOpen(true);
     if (name && mail && validMail && message) {
+      send(
+        'service_aovw5bg',
+        'template_unlrev4',
+        {
+          fromName: name,
+          mail: mail,
+          toName: 'Dejan',
+          message: message
+        },
+        'user_QSndRijrK4zputBY6mlgc'
+      )
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        })
+        .catch((err) => {
+          console.log('FAILED...', err);
+        });
+
       setPopUpText('Thanks for submitting  your message !');
     } else if (!name || !mail || !message) {
       setPopUpText('Please fill in all fields !')
@@ -45,40 +73,40 @@ export default function Index() {
 
   return (
     <Layout>
-      
-     <Head>
+
+      <Head>
         <title>Contact</title>
       </Head>
       <h2 className={styles.head}>Get in touch with us</h2>
 
       <div className={styles.formContainer}>
         <div className={styles.inputContainer}>
-          <input className={styles.inputField} value={name} type="text" name="name" placeholder="Your name" onChange={handleNameChange}/>
-          {name && <CheckCircleIcon className={styles.checkIcon}/> }
+          <input className={styles.inputField} value={name} type="text" name="name" placeholder="Your name" onChange={handleNameChange} />
+          {name && <CheckCircleIcon className={styles.checkIcon} />}
         </div>
         <div className={styles.inputContainer}>
           <input className={styles.inputField} value={mail} type="text" name="email" placeholder="Your mail" onChange={handleMailChange} />
-          {mail && validMail && <CheckCircleIcon className={styles.checkIcon}/> }
+          {mail && validMail && <CheckCircleIcon className={styles.checkIcon} />}
         </div>
         <div className={styles.inputContainer}>
           <textarea className={styles.textField} value={message} name="text" placeholder="Your message/question" onChange={handleMessageChange} />
-          {message && <CheckCircleIcon className={styles.checkIconMessage}/> }
+          {message && <CheckCircleIcon className={styles.checkIconMessage} />}
         </div>
         <button className={styles.contactButton} onClick={handleSubmit}> Contact us !</button>
 
         {popUpOpen &&
-        <div className={styles.popUp}>
-          <div className={styles.line}></div>
-          <div className={styles.popUpText}>
-            {popUpText}
+          <div className={styles.popUp}>
+            <div className={styles.line}></div>
+            <div className={styles.popUpText}>
+              {popUpText}
+            </div>
+
           </div>
-        
-        </div>
-      }
+        }
       </div>
-      
-      
-      
+
+
+
 
     </Layout>
   )
