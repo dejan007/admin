@@ -106,17 +106,31 @@
     transform: scale(1.5);
     top: 20px;
     left: 20px;
-    fill: blueviolet;
+    fill: #dc83e5 !important;
   }
 
   .visible {
     visibility: visible !important;
   }
 
+
+.mainIcon {
+  margin-top: 44px;
+  fill: #dc83e5 !important;
+
+  &:hover {
+    fill: #cf55dd !important;
+  }
+}
+  
   @media(max-width: 666px) {
     .container {
       visibility: hidden;
       z-index: 5;
+    }
+
+    .mainIcon {
+      visibility: hidden;
     }
 
     .menuIcon {

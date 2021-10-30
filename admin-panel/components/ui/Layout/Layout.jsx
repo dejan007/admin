@@ -12,6 +12,8 @@ import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
+import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
+import Router from 'next/router';
 
 export default function Layout({ children }) {
     const { theme, setTheme } = useContext(ThemeContext);
@@ -26,7 +28,7 @@ export default function Layout({ children }) {
             <MenuIcon className={styles.menuIcon} onClick = {() => setVisible(!visible)}/>
           
             <div className={visible ? `${styles.container} ${styles.visible}` : styles.container}>
-                
+                <AllInclusiveIcon className={styles.mainIcon} onClick={()=> Router.push('/home')}/>
                 <div className={styles.navigationWrapper}>
                     <Link href="/home">
                         <a className={router.route==='/home' ? styles.navActive: undefined}>
