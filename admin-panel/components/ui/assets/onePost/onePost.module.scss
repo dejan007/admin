@@ -71,6 +71,13 @@
     }
 }
 
+.date {
+    font-size: 0.8em;
+    color: gray;
+    margin-top: -15px;
+    margin-left: 10px;
+}
+
     @media(max-width: 650px) {
        .container {
            width: 200px;

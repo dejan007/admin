@@ -28,3 +28,10 @@
         color: gray;
     }
 }
+
+@media(max-width: 470px) {
+   .tableContainer {
+       width: 100%;
+       min-width: 300px;
+   }
+ }

@@ -332,8 +332,8 @@ export default function DataTable() {
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey={"year"} />
-              <YAxis />
+              <XAxis dataKey={"year"} fontSize={12}/>
+              <YAxis fontSize={12}/>
               <Tooltip />
               <Legend />
               <Line type="monotone" dataKey="rating" stroke="#FFFFFF" activeDot={{ r: 8 }} />

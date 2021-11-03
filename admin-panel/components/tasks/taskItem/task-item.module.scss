@@ -89,3 +89,11 @@
     }
 }
 
+@media(max-width: 470px) {
+    .container  {
+        .status {
+            visibility:  hidden;
+        }
+    }
+ }
+

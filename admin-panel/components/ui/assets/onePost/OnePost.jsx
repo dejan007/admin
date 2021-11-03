@@ -21,13 +21,21 @@ function OnePost({ id, title, body }) {
         setOpen(false);
     };
 
+    function randomDate(start, end, startHour, endHour) {
+        var date = new Date(+start + Math.random() * (end - start));
+        var hour = startHour + Math.random() * (endHour - startHour) | 0;
+        date.setHours(hour);
+        return date.toDateString();
+      }
+
     return (
         <>
             <div  className= {`${styles.container} ${theme}`} onClick={handleOpen}>
                 <img src={'images/' + images[id % 4]} className={styles.postImage} />
                 <div className={styles.blogText}>
-                <div className={styles.title}>{title}</div>
-                <div className={styles.body}>{body}</div>
+                    <div className={styles.title}>{title}</div>
+                    <div className={styles.date}>{randomDate(new Date(2020, 0, 1), new Date(), 0, 24)}</div>
+                    <div className={styles.body}>{body}</div>
                 </div>
             </div>
             <Modal
